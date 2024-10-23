@@ -1,0 +1,43 @@
+# Create groups for each role:
+sudo groupadd developers
+sudo groupadd therapists
+sudo groupadd marketing
+sudo groupadd it_admins
+
+#create users:
+sudo useradd alex
+sudo useradd mary
+sudo useradd martin
+sudo useradd john
+
+# Add users to their respective groups:
+sudo usermod -aG developers alex
+sudo usermod -aG therapists mary
+sudo usermod -aG marketing martin
+sudo usermod -aG it_admins john
+
+# Create directories
+sudo mkdir /data/development
+sudo mkdir /data/patient_data
+sudo mkdir /data/marketing
+sudo mkdir /data/system
+
+# Set permissions for developers - rwx for developers, no access for others
+sudo chown :developers /data/development
+sudo chmod 770 /data/development  
+
+# Set permissions for therapists - r for therapists, no access for others
+sudo chown :therapists /data/patient_data
+sudo chmod 750 /data/patient_data  
+
+# Set permissions for marketing - r for marketing, no access for others
+sudo chown :marketing /data/marketing
+sudo chmod 740 /data/marketing  
+
+# Set permissions for IT admins - rwx for IT admins, no access for others
+sudo chown :it_admins /data/system_metrics
+sudo chmod 770 /data/system
+
+
+
+
