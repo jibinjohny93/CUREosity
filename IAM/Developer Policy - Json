@@ -6,9 +6,24 @@
       "Action": [
         "s3:ListBucket",
         "s3:GetObject",
-        "codecommit:GitPull"
+        "s3:PutObject",
+        "codecommit:GitPull",
+        "codecommit:GitPush",
+        "cloud9:*",
+        "rds:DescribeDBInstances",
+        "rds:DescribeDBClusters",
+        "rds:DescribeDBSnapshots"
       ],
       "Resource": "*"
+    },
+    {
+      "Effect": "Deny",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::cureo-patient-data/*"
+      ]
     }
   ]
 }
