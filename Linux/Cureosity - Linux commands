@@ -38,6 +38,12 @@ sudo chmod 740 /data/marketing
 sudo chown :it_admins /data/system_metrics
 sudo chmod 770 /data/system
 
+# Set Up Access Controls with ACL
+Install ACL if not already installed --> sudo apt-get install acl
+
+# Set ACLs for specific users (I used Amazon Linux distribution to implemet in this assignment)
+sudo setfacl -m g:therapists:r-x /data/patient_data  # Read & Execute for therapists
+sudo setfacl -m g:developers:rwx /data/development  # Full access for developers
 
 
 
