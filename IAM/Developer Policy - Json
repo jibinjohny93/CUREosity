@@ -4,12 +4,11 @@
     {
       "Effect": "Allow",
       "Action": [
+        "s3:ListBucket",
         "s3:GetObject",
-        "s3:ListBucket"
+        "codecommit:GitPull"
       ],
-      "Resource": [
-        "arn:aws:s3:::development-bucket/*"
-      ]
+      "Resource": "*"
     }
   ]
 }
